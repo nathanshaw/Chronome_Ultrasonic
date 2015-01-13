@@ -1278,7 +1278,6 @@ void readAccel() {
   double dT;
   accel_t_gyro_union accel_t_gyro;
 
-
   Serial.println(F(""));
   Serial.println(F("MPU-6050"));
 
@@ -1342,7 +1341,7 @@ void readAccel() {
   Serial.print(accel_t_gyro.value.z_gyro, DEC);
   Serial.print(F(", "));
   Serial.println(F(""));
-  delay(500);
+  //delay(500);
 }
 // Run
 void loop() {  
