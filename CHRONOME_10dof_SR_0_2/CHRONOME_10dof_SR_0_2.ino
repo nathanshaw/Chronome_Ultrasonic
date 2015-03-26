@@ -621,7 +621,7 @@ void readDOF(){
   sensors_event_t event;
   /* Display the results (acceleration is measured in m/s^2) */
   accel.getEvent(&event);
-  /*
+  
   Serial.print(F("ACCEL "));
    Serial.print("X: "); 
    Serial.print(event.acceleration.x); 
@@ -633,7 +633,7 @@ void readDOF(){
    Serial.print(event.acceleration.z); 
    Serial.print("  ");
    Serial.println("m/s^2 ");
-   */
+   
   /* Display the results (magnetic vector values are in micro-Tesla (uT)) */
   mag.getEvent(&event);
   /*
@@ -719,7 +719,7 @@ void loop() {
     readDOF();
     time = currentTime; 
   }
-  for (uint8_t i = 0; i < SONAR_NUM; i++) { // Loop through all the sensors.
+  /*for (uint8_t i = 0; i < SONAR_NUM; i++) { // Loop through all the sensors.
     if (currentTime >= pingTimer[i]) {         // Is it this sensor's time to ping?
       pingTimer[i] += PING_INTERVAL * SONAR_NUM;  // Set next time this sensor will be pinged.
       if (i == 0 && currentSensor == SONAR_NUM - 1) oneSensorCycle(); // Sensor ping cycle complete, do something with the results.
@@ -728,7 +728,7 @@ void loop() {
       cm[currentSensor] = 0;                      // Make distance zero in case there's no ping echo for this sensor.
       sonar[currentSensor].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).
     }
-  }
+  }*/
   //read the buttons
 }
 
